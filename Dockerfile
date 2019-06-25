@@ -10,6 +10,6 @@ ENV PATH /usr/local/bin:$PATH
 
 EXPOSE 80
 
-RUN yarn install
+RUN npm install
 
 CMD ["pm2-runtime", "process.yml"]
