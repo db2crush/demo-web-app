@@ -13,13 +13,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t demo-web-app .
-      - docker tag demo-web-app:latest 473777743869.dkr.ecr.ap-northeast-2.amazonaws.com/demo-web-app:latest
+      - docker build -t test .
+      - docker tag test:latest 103505534696.dkr.ecr.ap-northeast-2.amazonaws.com/test:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 473777743869.dkr.ecr.ap-northeast-2.amazonaws.com/demo-web-app:latest
+      - docker push 103505534696.dkr.ecr.ap-northeast-2.amazonaws.com/test:latest
 # Include only the files required for your application to run.
 # Do not use recursively include artifacts from node_modules directory as it will include unnecessary packages
 # used only for building and testing.
@@ -32,4 +32,3 @@ phases:
 #     - process.yml
 #     - bin/*
 #     - package.json
-
