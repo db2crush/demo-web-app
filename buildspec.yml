@@ -20,15 +20,12 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push 103505534696.dkr.ecr.ap-northeast-2.amazonaws.com/test:latest
+      - printf '[{"name":"container_name","imageUri":"103505534696.dkr.ecr.ap-northeast-2.amazonaws.com/test:latest"}]' > imagedefinitions.json
 # Include only the files required for your application to run.
 # Do not use recursively include artifacts from node_modules directory as it will include unnecessary packages
 # used only for building and testing.
 # ExpressJS apps will need other artifact directories included (bin/*, public/*, routes/*, views/* etc).
-# artifacts:
-#   files:
-#     - Dockerfile
-#     - dist/*
-#     - app.js
-#     - process.yml
-#     - bin/*
-#     - package.json
+artifacts:
+  files:
+    - Dockerfile
+    - imageDetail.json
