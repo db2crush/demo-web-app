@@ -2,7 +2,7 @@
   "executionRoleArn": "arn:aws:iam::103505534696:role/ecsTaskExecutionRole",
   "containerDefinitions": [{
     "name": "TestContainer",
-    "image": "103505534696.dkr.ecr.ap-northeast-2.amazonaws.com/test:latest",
+    "image": "<IMAGE>",
     "essential": true,
     "portMappings": [{
       "hostPort": 80,
