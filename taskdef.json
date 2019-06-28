@@ -2,27 +2,19 @@
   "executionRoleArn": "arn:aws:iam::103505534696:role/ecsTaskExecutionRole",
   "containerDefinitions": [{
     "name": "TestContainer",
-    "image": "<IMAGE>",
+    "image": "<Image>",
     "essential": true,
     "portMappings": [{
       "hostPort": 80,
       "protocol": "tcp",
       "containerPort": 80
-    }],
-    "logConfiguration": {
-      "logDriver": "awslogs",
-      "secretOptions": null,
-      "options": {
-        "awslogs-group": "/ecs/TestTask",
-        "awslogs-region": "ap-northeast-2",
-        "awslogs-stream-prefix": "ecs"
-      }
-    }
+    }]
   }],
   "requiresCompatibilities": [
     "FARGATE"
   ],
+  "networkMode": "awsvpc",
   "cpu": "256",
   "memory": "512",
-  "family": "TestTask"
+  "family": "ecs-demo"
 }
